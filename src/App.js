@@ -30,11 +30,12 @@ class App extends Component {
           <p>
             Welcome to Simple Weather!
           </p>
-
-          fetchingData ?
-          <img src={logo} className="App-logo" alt="logo" />
-          :
+          {
+            fetchingData ?
+            <img src={logo} className="App-logo" alt="logo" />
+            :
           <p>Forecast is ready!</p>
+          }
         </header>
       </div>
     );
