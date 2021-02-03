@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from './sun2.png';
 import './App.css';
 
-const APIURL = `https://data.climacell.co/v4/locations?apikey=${proces.env.REACT_APP_CLIMA_CELL_KEY}/`
+const APIURL = `https://data.climacell.co/v4/locations?apikey=${process.env.REACT_APP_CLIMA_CELL_KEY}/`
 
 class App extends Component {
   constructor() {
@@ -12,6 +12,12 @@ class App extends Component {
       fetchingData: true, 
       weatherData: {}
     }
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log(position)
+    });
   }
 
   render() {
